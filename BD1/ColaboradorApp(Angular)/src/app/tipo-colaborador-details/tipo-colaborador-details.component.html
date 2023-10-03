@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: TipoColaborador</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario-tipo-colaborador></app-formulario-tipo-colaborador>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li class="description-li">
+                <p>CodColaborador</p>
+                <p>Tipo Colaborador:</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.tipoColaboradorStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codTipoColaborador}}</div>
+                    <div>{{item.colaborador}}</div>   
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codTipoColaborador)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>

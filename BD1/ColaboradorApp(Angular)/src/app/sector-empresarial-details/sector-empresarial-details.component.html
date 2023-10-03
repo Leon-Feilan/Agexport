@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: SectorEmpresarial</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario-sector-empresarial></app-formulario-sector-empresarial>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li class="description-li">
+                <p>CodSector</p>
+                <p>Sector Empresarial:</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.sectorEmpresarialStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codSector}}</div>
+                    <div>{{item.sector}}</div>   
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codSector)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>

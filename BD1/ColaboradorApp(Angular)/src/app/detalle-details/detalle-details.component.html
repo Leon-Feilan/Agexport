@@ -1,0 +1,34 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: Detalle_Colaborador_SectorEmpresarial</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario-detalles></app-formulario-detalles>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li class="description-li">
+                <p>CodColaborador_FK</p>
+                <p>CodSector_FK</p>
+                <p>CodTipoColaborador_FK</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.detalleStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codColaborador_FK}}</div> 
+                    <div>{{item.codSector_FK}}</div> 
+                    <div>{{item.codTipoColaborador_FK}}</div> 
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.omitId)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>
+

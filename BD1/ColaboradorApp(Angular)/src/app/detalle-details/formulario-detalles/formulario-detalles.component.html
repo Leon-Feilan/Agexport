@@ -1,0 +1,23 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.detalleFormEnviar" novalidate autocomplete="off">
+    <!--- First ID can be ommitted -->
+    <input type="hidden" name="omitId" [value]="service.detalleForm.omitId">
+    <div>
+        <label>CodColaborador_FK:</label>
+        <input placeholder="CodColaborador:" #codColaborador_FK="ngModel" name="codColaborador_FK" [(ngModel)]="service.detalleForm.codColaborador_FK" required>
+    </div>
+    <div>
+        <label>CodSector_FK:</label>
+        <input placeholder="CodSector:" #codSector_FK="ngModel" name="codSector_FK" [(ngModel)]="service.detalleForm.codSector_FK" required>
+    </div>
+    <div>
+        <label>CodTipoColaborador_FK:</label>
+        <input placeholder="CodTipoColaborador:" #codTipoColaborador_FK="ngModel" name="codTipoColaborador_FK" [(ngModel)]="service.detalleForm.codTipoColaborador_FK" required>
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>
+

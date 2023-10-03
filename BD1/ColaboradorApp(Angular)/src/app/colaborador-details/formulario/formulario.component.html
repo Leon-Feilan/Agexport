@@ -1,0 +1,46 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.colaboradorFormEnviar" novalidate autocomplete="off">
+    <!--- First ID can be ommitted -->
+    <input type="hidden" name="codColaborador" [value]="service.colaboradorForm.codColaborador">
+    <div>
+        <label>DPI:</label>
+        <input placeholder="DPI/CUI" #dpi="ngModel" name="dpi" [(ngModel)]="service.colaboradorForm.dpi" required minlength="7" maxlength="13">
+    </div>
+    <div>
+        <label>Primer Nombre:</label>
+        <input placeholder="Primer Nombre" #nombre_1="ngModel" name="nombre_1" [(ngModel)]="service.colaboradorForm.nombre_1" required>
+    </div>
+    <div>
+        <label>Segundo Nombre:</label>
+        <input placeholder="Segundo Nombre" #nombre_2="ngModel" name="nombre_2" [(ngModel)]="service.colaboradorForm.nombre_2">
+    </div>
+    <div>
+        <label>Primer Apellido:</label>
+        <input placeholder="Primer Apellido" #apellido_1="ngModel" name="apellido_1" [(ngModel)]="service.colaboradorForm.apellido_1" required>
+    </div>
+    <div>
+        <label>Segundo Apellido:</label>
+        <input placeholder="Segundo Apellido" #apellido_2="ngModel" name="apellido_2" [(ngModel)]="service.colaboradorForm.apellido_2" required>
+    </div>
+    <div>
+        <label>CodGenero:</label>
+        <input placeholder="1:M  2:F 3:?" #codGenero_FK="ngModel" name="codGenero_FK" [(ngModel)]="service.colaboradorForm.codGenero_FK" required>
+    </div>
+    <div>
+        <label>Fecha De Nacimiento:</label>
+        <input type='date' placeholder="YYYY-MM-DD" #fechaDeNacimiento="ngModel" name="fechaDeNacimiento" [(ngModel)]="service.colaboradorForm.fechaDeNacimiento">
+    </div>
+    <div>
+        <label>Telefono:</label>
+        <input placeholder="Telefono" #telefono="ngModel" name="telefono" [(ngModel)]="service.colaboradorForm.telefono"  minlength="8" maxlength="10">
+    </div>
+    <div>
+        <label>Direccion:</label>
+        <input placeholder="Direccion" #direccion="ngModel" name="direccion" [(ngModel)]="service.colaboradorForm.direccion"  maxlength="100">
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>

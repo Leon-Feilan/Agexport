@@ -1,0 +1,47 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: Colaborador</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario></app-formulario>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li class="description-li">
+                <p>CodColaborador</p>
+                <p>DPI</p>
+                <p>Primer Nombre</p>
+                <p>Segundo Nombre</p>
+                <p>Primer Apellido</p>
+                <p>Segundo Apellido</p>
+                <p>CodGenero</p>
+                <p>Fecha de Nacimiento</p>
+                <p>Telefono</p>
+                <p>Direccion</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.colaboradorStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codColaborador}}</div>
+                    <div>{{item.dpi}}</div>
+                    <div>{{item.nombre_1}}</div>
+                    <div>{{item.nombre_2}}</div>
+                    <div>{{item.apellido_1}}</div>
+                    <div>{{item.apellido_2}}</div>
+                    <div>{{item.codGenero_FK}}</div>
+                    <div>{{item.fechaDeNacimiento}}</div>
+                    <div>{{item.telefono}}</div>
+                    <div>{{item.direccion}}</div>    
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codColaborador)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>

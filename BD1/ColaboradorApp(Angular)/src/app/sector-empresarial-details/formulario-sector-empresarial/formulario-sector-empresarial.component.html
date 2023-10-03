@@ -1,0 +1,15 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.sectorEmpresarialFormEnviar" novalidate autocomplete="off">
+    <!--- First ID can be ommitted -->
+    <input type="hidden" name="codSector" [value]="service.sectorEmpresarialForm.codSector">
+    <div>
+        <label>Sector Empresarial:</label>
+        <input placeholder="Sector" #sector="ngModel" name="sector" [(ngModel)]="service.sectorEmpresarialForm.sector" required>
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>
+

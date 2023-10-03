@@ -1,0 +1,15 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.tipoColaboradorFormEnviar" novalidate autocomplete="off">
+    <!--- First ID can be ommitted -->
+    <input type="hidden" name="codTipoColaborador" [value]="service.tipocolaboradorForm.codTipoColaborador">
+    <div>
+        <label>Tipo de Colaborador:</label>
+        <input placeholder="Colaborador" #colaborador="ngModel" name="colaborador" [(ngModel)]="service.tipocolaboradorForm.colaborador" required>
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>
+

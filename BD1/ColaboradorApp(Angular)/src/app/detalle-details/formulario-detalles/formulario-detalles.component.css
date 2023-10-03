@@ -1,0 +1,6 @@
+div{
+    display: flex;
+    justify-content: space-between;
+    margin: 7px;
+    padding-right: 5px;
+}

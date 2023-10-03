@@ -1,0 +1,33 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: Factura</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario></app-formulario>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li>
+                <p>CodFactura</p>
+                <p>CodConsumidor</p>
+                <p>Fecha</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.facturaStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codFactura}}</div>
+                    <div>{{item.codConsumidor_FK}}</div>
+                    <div>{{item.fecha}}</div>
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codFactura)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>

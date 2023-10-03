@@ -1,0 +1,23 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.productoFormEnviar" novalidate autocomplete="off">
+    <!--- Factura ID can be ommitted since the API increment its values automatically-->
+    <input type="hidden" name="codProducto" [value]="service.productoForm.codProducto">
+    <div>
+        <label>Nombre:</label>
+        <input placeholder="Nombre:" #nit="ngModel" name="nombre" [(ngModel)]="service.productoForm.nombre" required minlength="1" maxlength="30">
+    </div>
+    <div>
+        <label>Stock</label>
+        <input  placeholder="Stock" #nombre="ngModel" name="stock" [(ngModel)]="service.productoForm.stock">
+    </div>
+    <div>
+        <label>Precio</label>
+        <input  placeholder="Precio" #apellido="ngModel" name="precio" [(ngModel)]="service.productoForm.precio">
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>
+

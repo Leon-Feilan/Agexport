@@ -1,0 +1,36 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: Producto</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario-producto></app-formulario-producto>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li>
+                <p>CodProducto</p>
+                <p>Nombre</p>
+                <p>Stock</p>
+                <p>Precio</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.productoStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codProducto}}</div>
+                    <div>{{item.nombre}}</div>
+                    <div>{{item.stock}}</div>
+                    <div>{{item.precio}}</div>
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codProducto)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>
+

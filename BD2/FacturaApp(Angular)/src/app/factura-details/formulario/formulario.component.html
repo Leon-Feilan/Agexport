@@ -1,0 +1,18 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.facturaFormEnviar" novalidate autocomplete="off">
+    <!--- Factura ID can be ommitted since the API increment its values automatically-->
+    <input type="hidden" name="codFactura" [value]="service.facturaForm.codFactura">
+    <div>
+        <label>ID de Consumidor:</label>
+        <input placeholder="ID de Contribuyente" #nit="ngModel" name="nit" [(ngModel)]="service.facturaForm.codConsumidor_FK" required minlength="1" maxlength="5">
+    </div>
+    <div>
+        <label>Fecha:</label>
+        <input type='date' placeholder="YYYY-MM-DD" #fecha="ngModel" name="fecha" [(ngModel)]="service.facturaForm.fecha">
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>

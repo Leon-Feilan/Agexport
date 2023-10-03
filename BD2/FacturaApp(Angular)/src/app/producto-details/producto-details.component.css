@@ -1,0 +1,51 @@
+
+
+.registro-title{
+    width: 100%;
+    background-color: rgb(2, 33, 62);
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    color: white;
+
+}
+.main-container{
+    width: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    height: 300px;
+}
+
+.left-container{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.right-container{
+    width: 75%;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+li{
+    display: block;
+}
+
+.item-li{
+    color: white;
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(4, 50, 23);
+    height: fit-content;
+}

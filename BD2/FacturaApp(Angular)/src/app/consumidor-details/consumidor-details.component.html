@@ -1,0 +1,35 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div class="registro-title">
+    <div><h1> CRUD: Consumidor</h1></div>
+    <div><h3>Registros</h3></div>
+</div>
+<div class="main-container">
+    <div class="left-container">
+        <app-formulario-consumidor></app-formulario-consumidor>
+    </div>
+    <div class="right-container">
+        
+        <ul>
+            <li>
+                <p>CodConsumidor</p>
+                <p>NIT</p>
+                <p>Nombre</p>
+                <p>Apellido</p>
+            </li>
+            
+            <li class="item-li" *ngFor="let item of service.consumidorStorage">
+                <div class="items" (click)="fillForm(item)">
+                    <div>{{item.codConsumidor}}</div>
+                    <div>{{item.nit}}</div>
+                    <div>{{item.nombre}}</div>
+                    <div>{{item.apellido}}</div>
+                </div>
+                <section>
+                    <i (click) = 'onDelete(item.codConsumidor)' class="material-icons">delete</i>
+                </section>
+            </li>
+        </ul>
+    </div>  
+</div>

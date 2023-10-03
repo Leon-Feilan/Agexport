@@ -1,0 +1,22 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.consumidorFormEnviar" novalidate autocomplete="off">
+    <!--- Factura ID can be ommitted since the API increment its values automatically-->
+    <input type="hidden" name="codConsumidor" [value]="service.consumidorForm.codConsumidor">
+    <div>
+        <label>NIT:</label>
+        <input placeholder="NIT de Contribuyente" #nit="ngModel" name="nit" [(ngModel)]="service.consumidorForm.nit" required minlength="8" maxlength="9">
+    </div>
+    <div>
+        <label>Nombre:</label>
+        <input  placeholder="Nombre" #nombre="ngModel" name="nombre" [(ngModel)]="service.consumidorForm.nombre">
+    </div>
+    <div>
+        <label>Apellido:</label>
+        <input  placeholder="Apellido" #apellido="ngModel" name="apellido" [(ngModel)]="service.consumidorForm.apellido">
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>

@@ -1,0 +1,27 @@
+
+
+
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.detalleFormEnviar" novalidate autocomplete="off">
+    <!--- Factura ID can be ommitted since the API increment its values automatically-->
+    <input type="hidden" name="omitId" [value]="service.detalleForm.omitId">
+    <div>
+        <label>CodProducto_FK:</label>
+        <input placeholder="Producto ID" #codProducto_FK="ngModel" name="codProducto_FK" [(ngModel)]="service.detalleForm.codProducto_FK" required>
+    </div>
+    <div>
+        <label>CodFactura_FK</label>
+        <input placeholder="Factura ID" #codFactura_FK="ngModel" name="codFactura_FK" [(ngModel)]="service.detalleForm.codFactura_FK">
+    </div>
+    <div>
+        <label>Cantidad</label>
+        <input placeholder="Cantidad" #cantidad="ngModel" name="cantidad" [(ngModel)]="service.detalleForm.cantidad">
+    </div>
+    <div>
+        <label>total</label>
+        <input placeholder="Total" #total="ngModel" name="total" [(ngModel)]="service.detalleForm.total">
+    </div>
+    <div>
+        <button mat-raised-button color="primary">Agregar</button>
+    </div>
+</form>
+
